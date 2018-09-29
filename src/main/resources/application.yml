@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/FishPond
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    dbcp2:
+      max-idle: 100
+      max-wait-millis: -1
+      min-idle: 10
+      initial-size: 5
+    type: com.alibaba.druid.pool.DruidDataSource
+#  data:
+#    mongodb:
+#      uri: mongodb://127.0.0.1:27017/test
+
+#  rabbitmq:
+#    host: 127.0.0.1
+#    port: 5672
+#    username: guest
+#    password: guest
+
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: utf-8
+  servlet:
+    context-path: /demo
+    session:
+      timeout: 100
+
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  typeAliasesPackage: com.entity
+
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql

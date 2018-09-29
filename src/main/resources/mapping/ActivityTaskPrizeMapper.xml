@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.ActivityTaskPrizeMapper" >
+  <resultMap id="BaseResultMap" type="com.entity.ActivityTaskPrize" >
+    <id column="ID" property="id" jdbcType="INTEGER" />
+    <result column="ACTIVITY_TASK_ID" property="activityTaskId" jdbcType="INTEGER" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="ICON" property="icon" jdbcType="VARCHAR" />
+    <result column="PRIZE_ID" property="prizeId" jdbcType="INTEGER" />
+    <result column="DAYS" property="days" jdbcType="INTEGER" />
+    <result column="DES" property="des" jdbcType="VARCHAR" />
+    <result column="STATUS" property="status" jdbcType="INTEGER" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="CREATE_USER" property="createUser" jdbcType="VARCHAR" />
+    <result column="UPDATE_TIME" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="UPDATE_USER" property="updateUser" jdbcType="VARCHAR" />
+    <result column="TYPE" property="type" jdbcType="INTEGER" />
+    <result column="ACCEPT_PRIZE_DES" property="acceptPrizeDes" jdbcType="VARCHAR" />
+    <result column="VIRTUAL_PRIZE_URL" property="virtualPrizeUrl" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, ACTIVITY_TASK_ID, `NAME`, ICON, PRIZE_ID, DAYS, DES, STATUS, CREATE_TIME, CREATE_USER,
+    UPDATE_TIME, UPDATE_USER, `TYPE`, ACCEPT_PRIZE_DES, VIRTUAL_PRIZE_URL
+  </sql>
+  <select id="selectByPrimaryKey" resultType="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from activity_task_prize
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from activity_task_prize
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.entity.ActivityTaskPrize" >
+    insert into activity_task_prize (ID, ACTIVITY_TASK_ID, NAME, 
+      ICON, PRIZE_ID, DAYS, 
+      DES, STATUS, CREATE_TIME, 
+      CREATE_USER, UPDATE_TIME, UPDATE_USER, 
+      TYPE, ACCEPT_PRIZE_DES, VIRTUAL_PRIZE_URL
+      )
+    values (#{id,jdbcType=INTEGER}, #{activityTaskId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+      #{icon,jdbcType=VARCHAR}, #{prizeId,jdbcType=INTEGER}, #{days,jdbcType=INTEGER}, 
+      #{des,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{createUser,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR}, 
+      #{type,jdbcType=INTEGER}, #{acceptPrizeDes,jdbcType=VARCHAR}, #{virtualPrizeUrl,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.ActivityTaskPrize" >
+    insert into activity_task_prize
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="activityTaskId != null" >
+        ACTIVITY_TASK_ID,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="icon != null" >
+        ICON,
+      </if>
+      <if test="prizeId != null" >
+        PRIZE_ID,
+      </if>
+      <if test="days != null" >
+        DAYS,
+      </if>
+      <if test="des != null" >
+        DES,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="createUser != null" >
+        CREATE_USER,
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME,
+      </if>
+      <if test="updateUser != null" >
+        UPDATE_USER,
+      </if>
+      <if test="type != null" >
+        TYPE,
+      </if>
+      <if test="acceptPrizeDes != null" >
+        ACCEPT_PRIZE_DES,
+      </if>
+      <if test="virtualPrizeUrl != null" >
+        VIRTUAL_PRIZE_URL,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="activityTaskId != null" >
+        #{activityTaskId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="icon != null" >
+        #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="prizeId != null" >
+        #{prizeId,jdbcType=INTEGER},
+      </if>
+      <if test="days != null" >
+        #{days,jdbcType=INTEGER},
+      </if>
+      <if test="des != null" >
+        #{des,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null" >
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="acceptPrizeDes != null" >
+        #{acceptPrizeDes,jdbcType=VARCHAR},
+      </if>
+      <if test="virtualPrizeUrl != null" >
+        #{virtualPrizeUrl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.ActivityTaskPrize" >
+    update activity_task_prize
+    <set >
+      <if test="activityTaskId != null" >
+        ACTIVITY_TASK_ID = #{activityTaskId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="icon != null" >
+        ICON = #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="prizeId != null" >
+        PRIZE_ID = #{prizeId,jdbcType=INTEGER},
+      </if>
+      <if test="days != null" >
+        DAYS = #{days,jdbcType=INTEGER},
+      </if>
+      <if test="des != null" >
+        DES = #{des,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null" >
+        CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        TYPE = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="acceptPrizeDes != null" >
+        ACCEPT_PRIZE_DES = #{acceptPrizeDes,jdbcType=VARCHAR},
+      </if>
+      <if test="virtualPrizeUrl != null" >
+        VIRTUAL_PRIZE_URL = #{virtualPrizeUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.entity.ActivityTaskPrize" >
+    update activity_task_prize
+    set ACTIVITY_TASK_ID = #{activityTaskId,jdbcType=INTEGER},
+      NAME = #{name,jdbcType=VARCHAR},
+      ICON = #{icon,jdbcType=VARCHAR},
+      PRIZE_ID = #{prizeId,jdbcType=INTEGER},
+      DAYS = #{days,jdbcType=INTEGER},
+      DES = #{des,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=INTEGER},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      TYPE = #{type,jdbcType=INTEGER},
+      ACCEPT_PRIZE_DES = #{acceptPrizeDes,jdbcType=VARCHAR},
+      VIRTUAL_PRIZE_URL = #{virtualPrizeUrl,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
