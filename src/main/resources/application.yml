@@ -31,7 +31,7 @@ server:
 
 
 mybatis:
-  mapperLocations: classpath:mapper/*.xml
+  mapperLocations: classpath:mapping/*.xml
   typeAliasesPackage: com.entity
 
 pagehelper:

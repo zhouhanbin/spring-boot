@@ -22,7 +22,7 @@
     ID, ACTIVITY_TASK_ID, `NAME`, ICON, PRIZE_ID, DAYS, DES, STATUS, CREATE_TIME, CREATE_USER,
     UPDATE_TIME, UPDATE_USER, `TYPE`, ACCEPT_PRIZE_DES, VIRTUAL_PRIZE_URL
   </sql>
-  <select id="selectByPrimaryKey" resultType="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from activity_task_prize
