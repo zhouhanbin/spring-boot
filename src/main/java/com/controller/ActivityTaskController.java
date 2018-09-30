@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @RestController
 @RequestMapping("activityTask")
 public class ActivityTaskController {
@@ -17,6 +20,8 @@ public class ActivityTaskController {
     @RequestMapping("getById")
     @ResponseBody
     public Object getById(@RequestParam(value = "id")Integer id){
+        Map<String,String> stringStringMap = new HashMap<>(16);
+        stringStringMap.put("","");
        return activityTaskPrizeService.findById(id);
     }
 

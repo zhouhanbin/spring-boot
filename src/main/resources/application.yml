@@ -10,15 +10,22 @@ spring:
       min-idle: 10
       initial-size: 5
     type: com.alibaba.druid.pool.DruidDataSource
+  cloud:
+    config:
+      uri: http://127.0.0.1:8080
+      name: configserver
+  config:
+    name: application.yml
+
 #  data:
 #    mongodb:
 #      uri: mongodb://127.0.0.1:27017/test
 
-#  rabbitmq:
-#    host: 127.0.0.1
-#    port: 5672
-#    username: guest
-#    password: guest
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
 
 server:
   port: 8080

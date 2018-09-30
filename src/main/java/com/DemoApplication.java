@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @SpringBootApplication
 //定时器
@@ -16,6 +17,13 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @MapperScan("com.dao")
 public class DemoApplication extends SpringBootServletInitializer {
     private static final Logger logger = LoggerFactory.getLogger(DemoApplication.class);
+
+    String name = "World";
+
+    @RequestMapping("/")
+    public String home(){
+        return "Hello " + name;
+    }
 
 
     @Override
