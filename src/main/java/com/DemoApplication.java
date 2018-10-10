@@ -1,5 +1,6 @@
 package com;
 
+import com.example.demo.hello.util.HashMapUtil;
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
