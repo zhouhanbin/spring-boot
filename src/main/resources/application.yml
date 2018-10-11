@@ -21,11 +21,11 @@ spring:
 #    mongodb:
 #      uri: mongodb://127.0.0.1:27017/test
 
-  rabbitmq:
-    host: 127.0.0.1
-    port: 5672
-    username: guest
-    password: guest
+#  rabbitmq:
+#    host: 127.0.0.1
+#    port: 5672
+#    username: guest
+#    password: guest
 
 server:
   port: 8080

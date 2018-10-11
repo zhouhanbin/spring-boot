@@ -21,7 +21,7 @@ public class DemoApplication extends SpringBootServletInitializer {
 
     String name = "World";
 
-    @RequestMapping("/")
+    @RequestMapping("/hello")
     public String home(){
         return "Hello " + name;
     }
