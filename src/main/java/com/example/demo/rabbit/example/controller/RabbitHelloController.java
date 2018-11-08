@@ -1,6 +1,7 @@
 package com.example.demo.rabbit.example.controller;
 
 import com.example.demo.rabbit.example.rabbitthree.FanoutSender;
+import com.example.demo.rabbit.example.testfive.Producer;
 import com.example.demo.rabbit.example.testone.HelloSender;
 import com.example.demo.rabbit.example.entity.ObjectData;
 import com.example.demo.rabbit.example.testtow.WorkSend;
@@ -48,5 +49,13 @@ public class RabbitHelloController {
     }
 
 
+    @Autowired
+    private Producer producer;
+
+    @RequestMapping("/fiveSend")
+    public String fiveSend() {
+        producer.send();
+        return "send ok";
+    }
 
 }

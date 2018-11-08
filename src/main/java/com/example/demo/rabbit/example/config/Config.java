@@ -13,15 +13,15 @@ public class Config {
         return new AnonymousQueue();
     }
 
-//    @Bean
-//    public AnonymousQueue BMessage() {
-//        return new AnonymousQueue();
-//    }
-//
-//    @Bean
-//    public AnonymousQueue CMessage() {
-//        return new AnonymousQueue();
-//    }
+    @Bean
+    public AnonymousQueue BMessage() {
+        return new AnonymousQueue();
+    }
+
+    @Bean
+    public AnonymousQueue CMessage() {
+        return new AnonymousQueue();
+    }
 
     @Bean
     FanoutExchange fanoutExchange() {
@@ -33,14 +33,14 @@ public class Config {
         return BindingBuilder.bind(AMessage).to(fanoutExchange);
     }
 
-//    @Bean
-//    Binding bindingExchangeB(Queue BMessage, FanoutExchange fanoutExchange) {
-//        return BindingBuilder.bind(BMessage).to(fanoutExchange);
-//    }
-//
-//    @Bean
-//    Binding bindingExchangeC(Queue CMessage, FanoutExchange fanoutExchange) {
-//        return BindingBuilder.bind(CMessage).to(fanoutExchange);
-//    }
+    @Bean
+    Binding bindingExchangeB(Queue BMessage, FanoutExchange fanoutExchange) {
+        return BindingBuilder.bind(BMessage).to(fanoutExchange);
+    }
+
+    @Bean
+    Binding bindingExchangeC(Queue CMessage, FanoutExchange fanoutExchange) {
+        return BindingBuilder.bind(CMessage).to(fanoutExchange);
+    }
 
 }
