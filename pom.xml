@@ -118,6 +118,11 @@
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
         <!--mongoDb-->
         <!--<dependency>-->
         <!--<groupId>org.springframework.boot</groupId>-->
@@ -142,6 +147,9 @@
                     <include>**/*.properties</include>
                     <include>**/*.xml</include>
                     <include>**/*.yml</include>
+                    <include>**/*.html</include>
+                    <include>**/*/*.js</include>
+                    <include>**/*/*.css</include>
                 </includes>
                 <filtering>false</filtering>
             </resource>

@@ -22,6 +22,16 @@ spring:
     port: 5672
     username: guest
     password: guest
+  mvc:
+    view:
+      prefix: classpath:templates/
+      suffix: .html
+    static-path-pattern: /static/**
+  thymeleaf:
+    mode: html
+    cache: false
+  resources:
+    static-locations: classpath:/static/
 
 
 
@@ -33,7 +43,6 @@ server:
     context-path: /demo
     session:
       timeout: 100
-
 
 
 mybatis:
