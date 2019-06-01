@@ -32,7 +32,8 @@ spring:
     cache: false
   resources:
     static-locations: classpath:/static/
-
+  aop:
+    auto: true
 
 
 server:

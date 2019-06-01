@@ -1,4 +1,4 @@
-//package com.example.demo.hello.mongodb;
+//package com.Wanger.demo.hello.mongodb;
 //
 //import org.springframework.data.annotation.Id;
 //
